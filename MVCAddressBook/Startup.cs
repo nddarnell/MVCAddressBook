@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MVCAddressBook.Services;
+using MVCAddressBook.Services.Interfaces;
 
 namespace MVCAddressBook
 {
@@ -29,6 +31,8 @@ namespace MVCAddressBook
         {
             services.AddDbContext<ApplicationDbContext>(options => 
             options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IImageService, BasicImageService>();
 
 
             services.AddControllersWithViews();
