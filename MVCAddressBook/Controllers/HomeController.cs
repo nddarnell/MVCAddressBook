@@ -23,6 +23,11 @@ namespace MVCAddressBook.Controllers
             return View();
         }
 
+        public IActionResult App()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
